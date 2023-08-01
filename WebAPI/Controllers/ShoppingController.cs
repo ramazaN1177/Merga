@@ -33,10 +33,11 @@ namespace WebAPI.Controllers
 
         [Route("RemoveFromCart")]
         [HttpDelete]
-        public IActionResult RemoveFromCart(int cartItemRequest)
+        public IActionResult RemoveFromCart(int cartId,CartItemRequest cartItemRequest)
         {
-            var result = _shoppingService.RemoveFromCart(cartItemRequest);
+            var result = _shoppingService.RemoveFromCart(cartId,cartItemRequest);
             return Ok(result);
+
         }
         [Route("ClearCart")]
         [HttpDelete]
